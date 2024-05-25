@@ -1,0 +1,27 @@
+#include <iostream>
+#include <deque>
+using namespace std;
+
+int main(){
+  deque<int> number;
+  int *front = &number.front();
+  int *back = &number.back();
+  number.push_back(10);
+  number.push_front(9);
+  number.push_front(8);
+  number.push_front(7);
+  number.push_front(6);
+  number.push_front(5);
+  number.push_front(4);
+  number.push_front(3);
+
+  for(int i : number){
+    cout << "number : " << i << endl;
+  }
+  cout << "first : " << *front << endl;
+  cout << "last : " << *back << endl;
+  //number.size(), .empty(),.clear();
+  delete front;
+  delete back;
+}
+//queue, stack을 합친 느낌에 가까운 구조로 두가지를 동시에 활용해야 하는 상황에서 매우 유용하다.
